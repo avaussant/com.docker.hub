@@ -1,13 +1,15 @@
 FROM centos:7
 
 MAINTAINER Evan Zeimet <podnov@gmail.com>
-RUN yum install -y traceroute \
+RUN yum install -y \
         curl \
         dnsutils \
         jq \
+	iputils \
         nmap \ 
         net-tools \
         telnet \
+	traceroute\
     && yum clean all
 
 COPY Dockerfile /Dockerfile
