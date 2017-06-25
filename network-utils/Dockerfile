@@ -10,6 +10,7 @@ RUN yum install -y \
         nmap \ 
         net-tools \
         telnet \
+	tcpdump \
 	traceroute\
     && yum clean all
 
