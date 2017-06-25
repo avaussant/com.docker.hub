@@ -2,6 +2,7 @@ FROM centos:7
 
 MAINTAINER Evan Zeimet <podnov@gmail.com>
 RUN yum install -y \
+        bind-utils \
         curl \
         dnsutils \
         jq \
