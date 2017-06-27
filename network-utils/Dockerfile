@@ -4,10 +4,8 @@ MAINTAINER Evan Zeimet <podnov@gmail.com>
 RUN yum install -y \
         bind-utils \
         curl \
-        dnsutils \
-	ip \
+	iproute \
 	iputils \
-        jq \
         nmap \ 
         net-tools \
         telnet \
