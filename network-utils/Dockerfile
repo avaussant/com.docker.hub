@@ -5,7 +5,7 @@ RUN yum install -y \
         bind-utils \
         curl \
         dnsutils \
-	ip
+	ip \
 	iputils \
         jq \
         nmap \ 
