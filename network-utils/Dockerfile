@@ -4,13 +4,15 @@ MAINTAINER Evan Zeimet <podnov@gmail.com>
 RUN yum install -y \
         bind-utils \
         curl \
-	iproute \
-	iputils \
-        nmap \ 
+        iproute \
+        iputils \
+        mariadb \
+        nmap \
         net-tools \
+        postgresql \
         telnet \
-	tcpdump \
-	traceroute\
+        tcpdump \
+        traceroute\
     && yum clean all
 
 COPY Dockerfile /Dockerfile
