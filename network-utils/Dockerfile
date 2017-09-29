@@ -12,7 +12,7 @@ RUN yum install -y \
         postgresql \
         telnet \
         tcpdump \
-        traceroute\
+        traceroute \
     && yum clean all
 
 COPY Dockerfile /Dockerfile
