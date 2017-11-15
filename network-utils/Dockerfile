@@ -10,6 +10,7 @@ RUN yum install -y \
         nmap \
         net-tools \
         postgresql \
+        samba-client \
         telnet \
         tcpdump \
         traceroute \
