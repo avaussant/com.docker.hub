@@ -27,4 +27,4 @@ CMD /home/prom2teams/prom2teams.sh
 
 LABEL org.label-schema.docker.dockerfile="/prom2teams/Dockerfile" \
       org.label-schema.vcs-type="Git" \
-      org.label-schema.vcs-url="https://github.com/podnov/com.docker.hub"i
+      org.label-schema.vcs-url="https://github.com/podnov/com.docker.hub"
