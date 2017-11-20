@@ -1,7 +1,7 @@
 #!/bin/bash
 
 configPath="${PROM2TEAMS_CONFIGPATH}"
-defaultConfigPath="/prom2teams.ini"
+defaultConfigPath="/home/prom2teams/prom2teams.ini"
 
 if [ "$configPath" == "$defaultConfigPath" ]; then
         perl -p -i -e 's/\$\{([^}]+)\}/defined $ENV{$1} ? $ENV{$1} : $&/eg' $configPath

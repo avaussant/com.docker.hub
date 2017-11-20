@@ -2,18 +2,26 @@ FROM python:3.5
 
 MAINTAINER Evan Zeimet <podnov@gmail.com>
 
-env PROM2TEAMS_CONFIGPATH="/prom2teams.ini"
-env PROM2TEAMS_HOST="0.0.0.0"
-env PROM2TEAMS_PORT="8089"
-env PROM2TEAMS_LOGLEVEL="INFO"
+RUN useradd -m prom2teams
 
 RUN pip3 install prom2teams --no-cache-dir
 
 COPY Dockerfile /Dockerfile
-COPY prom2teams.ini /prom2teams.ini
-COPY prom2teams.sh /prom2teams.sh
 
-CMD /prom2teams.sh
+USER prom2teams
+
+ENV PROM2TEAMS_CONFIGPATH="/home/prom2teams/prom2teams.ini"
+ENV PROM2TEAMS_HOST="0.0.0.0"
+ENV PROM2TEAMS_PORT="8089"
+ENV PROM2TEAMS_LOGLEVEL="INFO"
+
+COPY --chown=prom2teams prom2teams.ini /home/prom2teams/prom2teams.ini
+COPY --chown=prom2teams prom2teams.sh /home/prom2teams/prom2teams.sh
+
+RUN chmod +x /home/prom2teams/prom2teams.sh
+
+WORKDIR /home/prom2teams
+CMD /home/prom2teams/prom2teams.sh
 
 LABEL org.label-schema.docker.dockerfile="/prom2teams/Dockerfile" \
       org.label-schema.vcs-type="Git" \
